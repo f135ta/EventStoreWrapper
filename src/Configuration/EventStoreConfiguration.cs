@@ -103,7 +103,7 @@
                 return this;
             }
 
-            // Take the Exchange Name from the Attribute - or - generate one based on the class name
+            // Take the Event Name from the Attribute - or - generate one based on the class name
             var eventNameAttribute = (EventNameAttribute)Attribute.GetCustomAttribute(messageType, typeof(EventNameAttribute));
             var eventName = eventNameAttribute != null ? eventNameAttribute.Name : string.Join(".", Regex.Split(handlerName, @"(?<!^)(?=[A-Z](?![A-Z]|$))")).ToLower();
 
